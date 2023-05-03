@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
 
 const CheifBanner = ({ data }) => {
-      console.log(data)
+      // console.log(data)
 
       const {picture,name, likes, num_recipes, years_of_experience } = data
       return (
@@ -20,10 +20,7 @@ const CheifBanner = ({ data }) => {
         <ListGroup.Item>num_recipes: {num_recipes}</ListGroup.Item>
         <ListGroup.Item>years_of_experience: {years_of_experience}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+     
     </Card>
         
       );

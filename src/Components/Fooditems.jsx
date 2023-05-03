@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheifBanner from './CheifBanner';
+import Recipesection from './Recipesection';
 
 const Fooditems = () => {
       const items=useLoaderData();
@@ -14,13 +15,18 @@ const Fooditems = () => {
                   .catch((error) => console.error(error))
       }, [])
 const data =chef.find((data)=>data.id==items[0].id);
+// console.log(chef);
 
       return (
             <div>
                   this is food:{items.length}
 
 
-                  <CheifBanner key={items[0].id} data={data}></CheifBanner>
+                  {/* <CheifBanner key={items[0].id} data={data}></CheifBanner> */}
+                 {
+                items.map((recipe)=><Recipesection key={recipe.id} recipe={recipe}></Recipesection>)
+               }
+
             </div>
       );
 };

@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ChefData = ({ data }) => {
-      console.log(data);
+      // console.log(data);
       const { id, name, likes, picture, num_recipes, years_of_experience } = data
 
       return (
@@ -27,7 +27,7 @@ const ChefData = ({ data }) => {
                     Likes: {likes}
                     </Card.Text>
                   </Card.Body>
-                  <Link><Button>View Recipes Button</Button></Link>
+                  <Link to={`/items/${id}`}><Button>View Recipes</Button></Link>
                 </Card>
           
       

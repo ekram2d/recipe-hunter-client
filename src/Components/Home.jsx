@@ -15,19 +15,22 @@ const Home = () => {
       return (
             <>
                   <Slider></Slider>
-                  <Row xs={1} md={2} className="g-4">
+                  <div className='mt-5'>
+                  <h2>THe chef are</h2>
+                  <Row xs={1} md={2} className="">
                        
-
+                 
 
                         {
                               chef.map((data) =>
-                                    <Row xs={1} md={2} className="g-4">
+                                    <Row xs={1} md={2} className="">
                                           <ChefData key={data.id} data={data}></ChefData>
                                     </Row>
 
                               )
                         }
                   </Row>
+                  </div>
 
 
             </>

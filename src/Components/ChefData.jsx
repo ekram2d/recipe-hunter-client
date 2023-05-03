@@ -13,8 +13,8 @@ const ChefData = ({ data }) => {
 
             
           
-                <Card className='w-100 g-4 mx-auto '>
-                  <Card.Img className='w-50 mx-auto' variant="top" src={picture} />
+                <Card className=' mx-auto mb-5 '>
+                  <Card.Img className='w-100 mx-auto' variant="top" src={picture} style={{height:'96%',width:'90%'}} />
                   <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>

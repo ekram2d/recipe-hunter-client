@@ -11,9 +11,12 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+    <div className='d-flex flex-column ' style={{minHeight:'100vh'}}>
+    <Header></Header>
       <Outlet></Outlet>
       <Footer></Footer>
+    </div>
+     
     </>
   )
 }

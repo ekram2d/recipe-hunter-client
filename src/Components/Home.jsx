@@ -17,13 +17,13 @@ const Home = () => {
                   <Slider></Slider>
                   <div className='mt-5'>
                   <h2>THe chef are</h2>
-                  <Row xs={1} md={2} className="">
+                  <Row xs={1} md={3} className="">
                        
                  
 
                         {
                               chef.map((data) =>
-                                    <Row xs={1} md={2} className="">
+                                    <Row xs={1} md={2} >
                                           <ChefData key={data.id} data={data}></ChefData>
                                     </Row>
 

@@ -1,19 +1,35 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Navbar, Row } from 'react-bootstrap';
 
 const Footer = () => {
       return (
-            <div>
-                  <footer className="mt-5">
-                        <Container fluid>
+            <Navbar className='mt-auto mt-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
+                  <footer>
+                        <Navbar>
                               <Row>
-                                    <Col className="text-center">
-                                          <p>&copy; 2023 Recipe Hunter</p>
+                                    <Col md={4}>
+                                          <h5>About Us</h5>
+                                          <p>We are a company that specializes in providing high-quality products to our customers.</p>
+                                    </Col>
+                                    <Col md={4}>
+                                          <h5>Contact Us</h5>
+                                          <p>Email: info@company.com</p>
+                                          <p>Phone: 555-1234</p>
+                                          <p>Address: 123 Main St, Anytown USA</p>
+                                    </Col>
+                                    <Col md={4}>
+                                          <h5>Connect With Us</h5>
+                                          <p>Follow us on social media:</p>
+                                          <ul>
+                                                <li><a href="#">Facebook</a></li>
+                                                <li><a href="#">Twitter</a></li>
+                                                <li><a href="#">Instagram</a></li>
+                                          </ul>
                                     </Col>
                               </Row>
-                        </Container>
+                        </Navbar>
                   </footer>
-            </div>
+            </Navbar>
       );
 };
 

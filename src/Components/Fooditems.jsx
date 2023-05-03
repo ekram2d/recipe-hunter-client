@@ -9,22 +9,35 @@ const Fooditems = () => {
       const [chef, setChef] = useState([]);
       const [singleChef,setSinglechef]=useState({});
       useEffect(() => {
+            
             fetch("http://localhost:5000/chef")
                   .then((res) => res.json())
-                  .then((data) => setChef(data))
+                  .then((data) =>{
+                        const data1 =data.find((data1)=>data1.id==items[0].id);
+                        setSinglechef(data1);
+                  return setChef(data)
+                  }) 
                   .catch((error) => console.error(error))
+                  
       }, [])
-const data =chef.find((data)=>data.id==items[0].id);
-// console.log(chef);
+     
+//    useEffect(()=>{
+//       console.log(chef);
+//       const data =chef.find((data)=>data.id==items[0].id);
+//       console.log(data);
+//             setSinglechef({ekram:'name'});
+
+//    },[])
+// console.log(singleChef);
 
       return (
             <div>
                   this is food:{items.length}
 
 
-                  {/* <CheifBanner key={items[0].id} data={data}></CheifBanner> */}
+                  <CheifBanner key={singleChef.id} singleChef={singleChef}></CheifBanner>
                  {
-                items.map((recipe)=><Recipesection key={recipe.id} recipe={recipe}></Recipesection>)
+                items.map((recipe,index)=><Recipesection key={index} recipe={recipe}></Recipesection>)
                }
 
             </div>

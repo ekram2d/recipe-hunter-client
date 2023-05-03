@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
 
-const CheifBanner = ({ data }) => {
+const CheifBanner = ({ singleChef }) => {
       // console.log(data)
 
-      const {picture,name, likes, num_recipes, years_of_experience } = data
+      const {picture,name, likes, num_recipes, years_of_experience } = singleChef
       return (
       
         <Card style={{ width: '80%' }} className='mx-auto mb-5'>

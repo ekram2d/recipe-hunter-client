@@ -7,7 +7,7 @@ import { getAuth, updateProfile } from 'firebase/auth';
 const auth = getAuth(app);
 const Register = () => {
       const [error,setError]=useState(null);
-      const { createUser } = useContext(AuthContext);
+      const { createUser,Logout } = useContext(AuthContext);
       const handleregister = ((event) => {
             event.preventDefault();
             setError("");
@@ -27,6 +27,13 @@ const Register = () => {
                         const registerUser = result.user;
                         console.log(registerUser);
                         setProfile(name, photo);
+                        Logout()
+                        .then((result) => {
+      
+                        })
+                        .catch(error => {
+      
+                        })
 
                   })
                   .catch(error => {

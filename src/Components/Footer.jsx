@@ -3,7 +3,7 @@ import { Col, Container, Navbar, Row } from 'react-bootstrap';
 
 const Footer = () => {
       return (
-            <Navbar className='mt-auto mt-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className='mt-auto mt-5' collapseOnSelect expand="lg" bg="light" variant="dark">
                   <footer>
                         <Navbar>
                               <Row>

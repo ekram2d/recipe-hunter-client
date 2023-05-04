@@ -1,8 +1,22 @@
-import React from 'react';
-import { Container, Nav, NavLink, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Container, Nav, NavLink, Navbar } from 'react-bootstrap';
 import { Link, Navigate } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Header = () => {
+      const { user, Logout } = useContext(AuthContext);
+      const handleLogout=()=>{
+
+            Logout()
+            .then((result)=>{
+
+            })
+            .catch(error=>{
+                  
+            })
+
+      }
+      console.log("user",user);
       return (
             <div>
                   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -13,13 +27,17 @@ const Header = () => {
                                     <Nav className="mx-auto ">
                                           <Link to='/'>Home</Link>
                                           <Nav.Link href="#pricing">Blog</Nav.Link>
-                                          
+
                                     </Nav>
-                                    <Nav>
-                                          <Nav.Link href="#deets">Profile</Nav.Link>
-                                          <Nav.Link eventKey={2} href="#memes">
-                                                Login
-                                          </Nav.Link>
+                                   <Nav>
+                                          {user && <Nav.Link href="#deets">{user.displayName}</Nav.Link>}
+
+                                          {
+                                                user ? <Button variant="secondary" onClick={handleLogout}>Logout</Button> :
+                                                      <Link to='/login' ><Button variant="secondary" >LogIn</Button></Link>
+                                          }
+
+
                                     </Nav>
                               </Navbar.Collapse>
                         </Container>

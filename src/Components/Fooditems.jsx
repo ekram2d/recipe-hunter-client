@@ -4,42 +4,45 @@ import CheifBanner from './CheifBanner';
 import Recipesection from './Recipesection';
 
 const Fooditems = () => {
-      const items=useLoaderData();
+      const items = useLoaderData();
       // console.log(items);
       const [chef, setChef] = useState([]);
-      const [singleChef,setSinglechef]=useState({});
+      const [singleChef, setSinglechef] = useState({});
       useEffect(() => {
-            
+
             fetch("http://localhost:5000/chef")
                   .then((res) => res.json())
-                  .then((data) =>{
-                        const data1 =data.find((data1)=>data1.id==items[0].id);
+                  .then((data) => {
+                        const data1 = data.find((data1) => data1.id == items[0].id);
                         setSinglechef(data1);
-                  return setChef(data)
-                  }) 
+                        return setChef(data)
+                  })
                   .catch((error) => console.error(error))
-                  
-      }, [])
-     
-//    useEffect(()=>{
-//       console.log(chef);
-//       const data =chef.find((data)=>data.id==items[0].id);
-//       console.log(data);
-//             setSinglechef({ekram:'name'});
 
-//    },[])
-// console.log(singleChef);
+      }, [])
+
+      //    useEffect(()=>{
+      //       console.log(chef);
+      //       const data =chef.find((data)=>data.id==items[0].id);
+      //       console.log(data);
+      //             setSinglechef({ekram:'name'});
+
+      //    },[])
+      // console.log(singleChef);
 
       return (
             <div>
-                  this is food:{items.length}
+                  <h1 className='mt-5'>Banner section</h1>
 
 
                   <CheifBanner key={singleChef.id} singleChef={singleChef}></CheifBanner>
-                 {
-                items.map((recipe,index)=><Recipesection key={index} recipe={recipe}></Recipesection>)
-               }
+                  <div>
+                        <h1 className='mt-5'>Recipe section</h1>
+                        {
+                              items.map((recipe, index) => <Recipesection key={index} recipe={recipe}></Recipesection>)
+                        }
 
+                  </div>
             </div>
       );
 };

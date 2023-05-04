@@ -16,7 +16,7 @@ const Header = () => {
                   })
 
       }
-      console.log("user", user);
+      // console.log("photo", user.photoURL);
       return (
             <div>
                   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

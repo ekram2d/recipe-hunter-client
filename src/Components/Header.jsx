@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, NavLink, Navbar } from 'react-bootstrap';
+import { Button, Col, Container, Nav, NavLink, Navbar } from 'react-bootstrap';
 import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-
+import Image from 'react-bootstrap/Image';
 const Header = () => {
       const { user, Logout } = useContext(AuthContext);
-      const handleLogout=()=>{
+      const handleLogout = () => {
 
             Logout()
-            .then((result)=>{
+                  .then((result) => {
 
-            })
-            .catch(error=>{
-                  
-            })
+                  })
+                  .catch(error => {
+
+                  })
 
       }
-      console.log("user",user);
+      console.log("user", user);
       return (
             <div>
                   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -29,8 +29,10 @@ const Header = () => {
                                           <Nav.Link href="#pricing">Blog</Nav.Link>
 
                                     </Nav>
-                                   <Nav>
-                                          {user && <Nav.Link href="#deets">{user.displayName}</Nav.Link>}
+                                    <Nav>
+                                          {user && <Col >
+                                                <Image style={{width:'40px'}} src={user.photoURL} roundedCircle /> <Nav.Link href="#deets">{user.displayName}</Nav.Link>
+                                          </Col>}
 
                                           {
                                                 user ? <Button variant="secondary" onClick={handleLogout}>Logout</Button> :

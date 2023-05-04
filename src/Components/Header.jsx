@@ -32,7 +32,7 @@ const Header = () => {
                                     </Nav>
                                     <Nav className='d-flex gap-2 p-2'>
                                           {user && <Col >
-                                                <Image  style={{ width: '40px' }} src={user.photoURL} roundedCircle /> <NavLink>  {user.displayName}</NavLink>
+                                                <Image style={{ width: '40px' }} src={user.photoURL} roundedCircle /> <NavLink>  {user.displayName}</NavLink>
                                           </Col>}
                                     </Nav>
                                     <Nav className=''>

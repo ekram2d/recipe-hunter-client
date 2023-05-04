@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   {
     path:"/items/:id",
     element:<PrivateRoute><Fooditems></Fooditems></PrivateRoute>,
-    loader:({params})=>fetch(`http://localhost:5000/items/${params.id}`)
+    loader:({params})=>fetch(`https://recipe-hunter-server-ekram2d.vercel.app/items/${params.id}`)
 
   },
   

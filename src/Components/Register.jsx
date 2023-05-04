@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
 import { AuthContext } from '../Provider/AuthProvider';
 import app from '../firebase/firebase.config';
 import { getAuth, updateProfile } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 const auth = getAuth(app);
 const Register = () => {
       const [error,setError]=useState(null);

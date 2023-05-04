@@ -7,7 +7,7 @@ const Home = () => {
   const [chef, setChef] = useState([]);
   const [state, setState] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/chef")
+    fetch("https://recipe-hunter-server-ekram2d.vercel.app/chef")
       .then((res) => res.json())
       .then((data) => {
         setState(false)

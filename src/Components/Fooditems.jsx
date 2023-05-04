@@ -12,7 +12,7 @@ const Fooditems = () => {
       const [state, setState] = useState(true);
       useEffect(() => {
 
-            fetch("http://localhost:5000/chef")
+            fetch("https://recipe-hunter-server-ekram2d.vercel.app/chef")
                   .then((res) => res.json())
                   .then((data) => {
                         const data1 = data.find((data1) => data1.id == items[0].id);

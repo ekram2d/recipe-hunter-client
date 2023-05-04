@@ -12,7 +12,8 @@ const Login = () => {
       const { signIn } = useContext(AuthContext);
       const [error, setError] = useState(null);
       // console.log('dddddd',location);
-      const from=location.state.from.pathname || '/'
+  
+      const from=location.state?.from?.pathname || '/'
       const handleLogin = (event) => {
             event.preventDefault();
             setError("");

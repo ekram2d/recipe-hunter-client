@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { BackspaceIcon, BeakerIcon, StarIcon } from '@heroicons/react/24/solid'
-
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Recipesection = ({ recipe }) => {
 
@@ -19,11 +20,11 @@ const Recipesection = ({ recipe }) => {
                               }</ListGroup.Item>
                               <ListGroup.Item> <h4>cooking_method:</h4>  {cooking_method}</ListGroup.Item>
 
-                              <div className='d-flex  mx-auto'>
+                              <div className='d-flex gap-2 align-items-center  mx-auto'>
                                     <h4>Ratting:</h4>
-                                    {
-                                          ingredients.map((data, index) => <p key={index}><StarIcon style={{ width: '20px', color: 'yellow' }} /></p>)
-                                    }
+                                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                                    <span>{rating}</span>
+                                   
 
                               </div>
                               <div>

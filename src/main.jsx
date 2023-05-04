@@ -14,6 +14,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Register from './Components/Register.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
 import PrivateRoute from './Components/PrivateRoute.jsx';
+import Blog from './Components/Blog.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,8 +41,12 @@ const router = createBrowserRouter([
     path:'/register',
     element:<Register></Register>
 
-  }
+  },
+  {
+    path:'/blog',
+    element:<Blog></Blog>
 
+  },
 
 ]
   },

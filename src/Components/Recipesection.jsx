@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 import { BackspaceIcon, BeakerIcon, StarIcon } from '@heroicons/react/24/solid'
 
 
@@ -25,6 +25,9 @@ const Recipesection = ({ recipe }) => {
                                           ingredients.map((data, index) => <p key={index}><StarIcon style={{ width: '20px', color: 'yellow' }} /></p>)
                                     }
 
+                              </div>
+                              <div>
+                                    <Button>Favourite</Button>
                               </div>
 
                         </ListGroup>

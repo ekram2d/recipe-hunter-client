@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheifBanner from './CheifBanner';
 import Recipesection from './Recipesection';
+import { Spinner } from 'react-bootstrap';
 
 const Fooditems = () => {
       const items = useLoaderData();
       // console.log(items);
       const [chef, setChef] = useState([]);
       const [singleChef, setSinglechef] = useState({});
+      const [state, setState] = useState(true);
       useEffect(() => {
 
             fetch("http://localhost:5000/chef")
@@ -15,6 +17,7 @@ const Fooditems = () => {
                   .then((data) => {
                         const data1 = data.find((data1) => data1.id == items[0].id);
                         setSinglechef(data1);
+                        setState(false)
                         return setChef(data)
                   })
                   .catch((error) => console.error(error))
@@ -32,6 +35,24 @@ const Fooditems = () => {
 
       return (
             <div>
+
+                  <div className='w-100 mt-5'>{state && <><Spinner animation="border" variant="primary" />
+      <Spinner animation="border" variant="secondary" />
+      <Spinner animation="border" variant="success" />
+      <Spinner animation="border" variant="danger" />
+      <Spinner animation="border" variant="warning" />
+      <Spinner animation="border" variant="info" />
+      <Spinner animation="border" variant="light" />
+      <Spinner animation="border" variant="dark" />
+      <Spinner animation="grow" variant="primary" />
+      <Spinner animation="grow" variant="secondary" />
+      <Spinner animation="grow" variant="success" />
+      <Spinner animation="grow" variant="danger" />
+      <Spinner animation="grow" variant="warning" />
+      <Spinner animation="grow" variant="info" />
+      <Spinner animation="grow" variant="light" />
+      <Spinner animation="grow" variant="dark" /> </>}</div>
+
                   <h1 className='mt-5'>Banner section</h1>
 
 

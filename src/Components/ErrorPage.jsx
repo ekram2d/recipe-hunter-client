@@ -7,7 +7,7 @@ const ErrorPage = () => {
             <div>
                   
                   <div>
-                        <img className='w-25' src="https://neurolink.company/cms/wp-content/uploads/2017/07/canstockphoto24393658-human-error.jpg"></img>
+                        <img className='w-25' src="https://amplethemes.com/blog/wp-content/uploads/2020/09/error404-1024x576.jpg"></img>
                         </div>
                         <p className='text-danger'>
             {error?.message}

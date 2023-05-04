@@ -8,11 +8,11 @@ import app from '../firebase/firebase.config';
 
 const Login = () => {
       const auth = getAuth(app)
-      const Provider=new GoogleAuthProvider();
-      const githunprovier=new GithubAuthProvider();
+      const Provider = new GoogleAuthProvider();
+      const githubprovier = new GithubAuthProvider();
       const navigate = useNavigate();
       const location = useLocation();
-      const { signIn,LogWithGoogle } = useContext(AuthContext);
+      const { signIn, LogWithGoogle, LogWithGithub } = useContext(AuthContext);
       const [error, setError] = useState(null);
       // console.log('dddddd',location);
 
@@ -31,7 +31,7 @@ const Login = () => {
             signIn(email, password)
                   .then(result => {
                         const singUser = result.user;
-                        console.log(singUser);
+                        // console.log(singUser);
                         navigate(from)
                   })
                   .catch(error => {
@@ -39,26 +39,28 @@ const Login = () => {
                   })
       }
 
-      const handleGoogleSignIn=()=>{
+      const handleGoogleSignIn = () => {
             console.log("gihub mama is coming")
-            LogWithGoogle(auth,Provider)
-            .then(result=>{
-                  const user = result.user;
-                  
-                  console.log(user);
-            })
-            .catch((error)=>setError(error))
+            LogWithGoogle(auth, Provider)
+                  .then(result => {
+                        const user = result.user;
+
+                        // console.log(user);
+                        navigate(from)
+                  })
+                  .catch((error) => setError(error))
 
       }
-      const handleGithubSignIn=()=>{
+      const handleGithubSignIn = () => {
             console.log("github mama is coming")
-            // signInWithPopup(auth,Provider)
-            // .then(result=>{
-            //       const user = result.user;
-                  
-            //       console.log(user);
-            // })
-            // .catch((error)=>setError(error))
+            LogWithGithub(auth, githubprovier)
+                  .then(result => {
+                        const user = result.user;
+
+                        // console.log(user);
+                        navigate(from)
+                  })
+                  .catch((error) => setError(error))
 
       }
       return (
@@ -81,9 +83,9 @@ const Login = () => {
                               <Button variant="primary" type="submit">
                                     Login
                               </Button>
-        
+
                         </Form>
-                        
+
                         <div className='d-flex   justify-content-center  gap-2 mt-2'>
                               <Button onClick={handleGoogleSignIn} variant="primary" type="submit">
                                     Google Sign In
@@ -94,7 +96,7 @@ const Login = () => {
 
                         </div>
                         <Link to='/register'>Have no account? Go Register</Link>
-                       
+
 
                   </Container>
                   <Form.Text className="text-sucess">

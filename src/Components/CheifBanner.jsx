@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
-import LazyLoad from 'react-lazy-load';
+
 
 const CheifBanner = ({ singleChef }) => {
   // console.log(data)

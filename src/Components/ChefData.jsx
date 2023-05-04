@@ -14,7 +14,7 @@ const ChefData = ({ data }) => {
 
 
 
-      <Card className=' mx-auto mb-5 '>
+      <Card className=' mx-auto mb-5  ' style={{width:'80%'}}>
 
         <LazyLoad height={300}  threshold={0.95}>
           <Card.Img className='w-100 mx-auto' variant="top" src={picture} style={{ height: '96%', width: '90%' }} />

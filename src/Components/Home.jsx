@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from './Slider';
 import ChefData from './ChefData';
 import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
+import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
   const [chef, setChef] = useState([]);
@@ -54,7 +55,7 @@ const Home = () => {
       </div>
 
 
-      <Container className='mt-5'>
+      <Container className='mt-5 mb-5'>
         <Row>
           <Col md={6} className="mb-4 mb-md-0">
             <h1 className="mb-3">Welcome to Section 1</h1>
@@ -66,7 +67,13 @@ const Home = () => {
             </p>
           </Col>
           <Col md={6}>
-            <img className='w-75' src="https://4.imimg.com/data4/NE/GE/MY-3775197/03.jpg" alt="placeholder" />
+         <div  className='mb-5'>
+         <LazyLoad height={300}  threshold={0.95}>
+            <img className='w-50' src="https://4.imimg.com/data4/NE/GE/MY-3775197/03.jpg" alt="placeholder" />
+            </LazyLoad>
+         </div>
+
+          
           </Col>
         </Row>
       </Container>
@@ -82,8 +89,11 @@ const Home = () => {
               <Button variant="primary">Fruit Corner details</Button>
             </p>
           </Col>
-          <Col>
-            <img className='w-75' src="https://images.creativemarket.com/0.1.0/ps/4681414/1820/1820/m1/fpnw/wm1/kjolemayepq5soly1f88bubaqisqkjmzjzhmvchwsxdrz2zgkmudfcsedrv5sidl-.jpg?1530298613&s=3f7688a1db6f8b520af94b3852787d27" alt="placeholder" />
+          <Col Col md={6} >
+          <LazyLoad height={300}  threshold={0.95}>
+            <img className='w-50' src="https://images.creativemarket.com/0.1.0/ps/4681414/1820/1820/m1/fpnw/wm1/kjolemayepq5soly1f88bubaqisqkjmzjzhmvchwsxdrz2zgkmudfcsedrv5sidl-.jpg?1530298613&s=3f7688a1db6f8b520af94b3852787d27" alt="placeholder" />
+           
+           </LazyLoad>
           </Col>
         </Row>
       </Container>

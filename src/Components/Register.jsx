@@ -4,14 +4,17 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { AuthContext } from '../Provider/AuthProvider';
 import app from '../firebase/firebase.config';
 import { getAuth, updateProfile } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate,  } from 'react-router-dom';
 const auth = getAuth(app);
 const Register = () => {
+      const navigate= useNavigate()
       const [error,setError]=useState(null);
+      const [succes,setSucess]=useState(null);
       const { createUser,Logout } = useContext(AuthContext);
       const handleregister = ((event) => {
             event.preventDefault();
             setError("");
+            
             const form = event.target;
             const name = form.displayname.value;
             const photo = form.photo.value;
@@ -28,6 +31,7 @@ const Register = () => {
                         const registerUser = result.user;
                         console.log(registerUser);
                         setProfile(name, photo);
+                        setSucess("succesfully created")
                         Logout()
                         .then((result) => {
       
@@ -36,11 +40,15 @@ const Register = () => {
       
                         })
 
+                        navigate('/login')
+                      
+
                   })
                   .catch(error => {
                         setError(error.messgae);
 
                   })
+                 
 
       })
       const setProfile = (name, photo) => {
@@ -92,7 +100,7 @@ const Register = () => {
 
                   </Container>
                   <Form.Text className="text-sucess">
-
+               {succes}
                   </Form.Text>
                   <Form.Text className="text-danger">
                {error}

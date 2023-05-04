@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { BackspaceIcon, BeakerIcon, StarIcon } from '@heroicons/react/24/solid'
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Recipesection = ({ recipe }) => {
 
       const { recipe_name, ingredients, cooking_method, rating } = recipe
+      const [set, useSet] = useState(true);
+      const handlebtn = () => {
+            toast(`${recipe_name}  is your favourite food`)
+            useSet(false);
+      }
       return (
             <div>
 
@@ -24,12 +31,17 @@ const Recipesection = ({ recipe }) => {
                                     <h4>Ratting:</h4>
                                     <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
                                     <span>{rating}</span>
-                                   
+
 
                               </div>
                               <div>
-                                    <Button>Favourite</Button>
+                                   
+
+
+                                    {set && <Button onClick={handlebtn}>Favourite</Button>}
+
                               </div>
+                              <ToastContainer/>
 
                         </ListGroup>
                   </Card>

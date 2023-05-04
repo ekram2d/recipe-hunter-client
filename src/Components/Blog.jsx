@@ -1,8 +1,13 @@
-import React from 'react';
+
+import { Button } from 'react-bootstrap';
+import React, { useRef } from 'react';
 
 const Blog = () => {
+   
       return (
             <div className='mt-5'>
+
+                  
 
                   <div className='container'>
                         <h3>Question 1: Tell us the differences between uncontrolled and controlled components?
@@ -23,10 +28,12 @@ const Blog = () => {
                         </h3>
                         <h5>
                               Answer 2:
-                              <p>Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Node allows you to write and run Javascript code server-side.</p>
-                              <p>Express.js is a framework for Node.js. Basically instead of writing 20 lines of code for a simple functionality with Node.js, you can write it in 2 lines using Express.js.
+                              <p>Install the prop-types package using npm or yarn:
 
-                                    You can write the webapp using Node.js, but I don`t recommend it. Express is a minimalistic framework and it will make you life easier.</p>
+                                    npm install prop-types</p>
+                              <p>import the PropTypes library in your component.</p>
+                              <p>Define the PropTypes for your component by adding a propTypes object to your component class. This object should have the name of each prop as a key and the type </p>
+                              <p>Use the PropTypes library to specify the expected types of your props. The library provides several built-in types, including string, number, bool, array, object, and more.</p>
                         </h5>
                   </div>
 
@@ -50,6 +57,7 @@ const Blog = () => {
                         <h5>
                               Answer 4:
                               <p>Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code</p>
+                              <p>You can also use the isRequired modifier to specify that a prop is required and should generate a warning if it's not provided.</p>
                         </h5>
 
                   </div>

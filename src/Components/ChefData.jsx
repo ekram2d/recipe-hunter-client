@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const ChefData = ({ data }) => {
@@ -14,7 +15,10 @@ const ChefData = ({ data }) => {
 
 
       <Card className=' mx-auto mb-5 '>
-        <Card.Img className='w-100 mx-auto' variant="top" src={picture} style={{ height: '96%', width: '90%' }} />
+
+        <LazyLoad height={300}  threshold={0.95}>
+          <Card.Img className='w-100 mx-auto' variant="top" src={picture} style={{ height: '96%', width: '90%' }} />
+        </LazyLoad>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import LazyLoad from 'react-lazy-load';
 
 const CheifBanner = ({ singleChef }) => {
   // console.log(data)
@@ -8,7 +9,7 @@ const CheifBanner = ({ singleChef }) => {
   return (
 
     <Card style={{ width: '80%' }} className='mx-auto mb-5'>
-      <Card.Img style={{ width: '50%' }} className='mx-auto' variant="top" src={picture} />
+      <Card.Img style={{ width: '50%' }} className='mx-auto' variant="top" src={picture} /> 
       <Card.Body>
 
 

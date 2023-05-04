@@ -1,15 +1,45 @@
 
 import { Button } from 'react-bootstrap';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const Blog = () => {
-   
+
+      const [loader, setLoader] = useState(false);
+
+      const downloadPDF = () => {
+            const capture = document.querySelector('.blog');
+            setLoader(true);
+            html2canvas(capture).then((canvas) => {
+                  const imgData = canvas.toDataURL('img/png');
+                  const doc = new jsPDF('p', 'mm', 'a4');
+                  const componentWidth = doc.internal.pageSize.getWidth();
+                  const componentHeight = doc.internal.pageSize.getHeight();
+                  doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+                  setLoader(false);
+                  doc.save('Funny-blog.pdf');
+            })
+      }
       return (
-            <div className='mt-5'>
+            <div className='mt-5 blog'>
+                  <div>
+                        <h1>Blog</h1>
+                        <Button
+                              onClick={downloadPDF}
+                              disabled={!(loader === false)}
+                        >
+                              {loader ? (
+                                    <span>Downloading</span>
+                              ) : (
+                                    <span>Download</span>
+                              )}
+                        </Button>
+                  </div>
 
-                  
 
-                  <div className='container'>
+
+                  <div className='container '>
                         <h3>Question 1: Tell us the differences between uncontrolled and controlled components?
 
                         </h3>

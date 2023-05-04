@@ -59,8 +59,8 @@ const Register = () => {
                   });
       }
       return (
-            <div className='mb-5'>
-                  <Container className='w-25 mx-auto mt-3'>
+            <div >
+                   <Container className='w-50  mx-auto mt-3 mb-5'>
                         <h3>Please Register  here </h3>
                         <Form onSubmit={handleregister}>
                               <Form.Group className="mb-3" controlId="formBasicEmail">

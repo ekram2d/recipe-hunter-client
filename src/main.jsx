@@ -13,6 +13,7 @@ import Fooditems from './Components/Fooditems.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Register from './Components/Register.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
+import PrivateRoute from './Components/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/items/:id",
-    element:<Fooditems></Fooditems>,
+    element:<PrivateRoute><Fooditems></Fooditems></PrivateRoute>,
     loader:({params})=>fetch(`http://localhost:5000/items/${params.id}`)
 
   },

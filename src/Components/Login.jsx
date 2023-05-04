@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 
 
-const Login = () => {
 
+const Login = () => {
       const navigate = useNavigate();
       const location = useLocation();
       const { signIn } = useContext(AuthContext);
       const [error, setError] = useState(null);
       // console.log('dddddd',location);
-      // const from=location.state.from.pathname || '/'
+      const from=location.state.from.pathname || '/'
       const handleLogin = (event) => {
             event.preventDefault();
             setError("");
@@ -28,6 +28,7 @@ const Login = () => {
                   .then(result => {
                         const singUser = result.user;
                         console.log(singUser);
+                        navigate(from)
                   })
                   .catch(error => {
                         setError(error.message);

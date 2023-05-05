@@ -7,8 +7,7 @@ This is a chef catagories website
 
 ## Demo
 
-https://subtle-mochi-cf5094.netlify.app
-
+https://recipe-hunter-ad129.web.app
 
 
 

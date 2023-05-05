@@ -53,12 +53,12 @@ const Fooditems = () => {
       <Spinner animation="grow" variant="light" />
       <Spinner animation="grow" variant="dark" /> </>}</div>
 
-                  <h1 className='mt-5'>Banner section</h1>
+                  <h1 className='mt-5'>Chef Details</h1>
 
 
                   <CheifBanner key={singleChef.id} singleChef={singleChef}></CheifBanner>
                   <div>
-                        <h1 className='mt-5'>Recipe section</h1>
+                        <h1 className='mt-5'>chef recipes</h1>
                         {
                               items.map((recipe, index) => <Recipesection key={index} recipe={recipe}></Recipesection>)
                         }

@@ -30,9 +30,10 @@ const Header = () => {
                               <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="mx-auto flex gap-2 text-decoration-none ">
                                           <NavLink to='/'
-                                          className={`${location.pathname ==='/'?'':''} text-decoration-none text-danger` }
+                                          className={`${location.pathname ==='/'?'':''} text-decoration-none text-info` }
                                           >Home</NavLink>
-                                          <NavLink className="text-decoration-none text-danger" to='/blog'>Blog</NavLink>
+                                            {/* <NavLink to='/'>Home</NavLink> */}
+                                          <NavLink className="text-decoration-none text-info " to='/blog'>Blog</NavLink>
 
                                     </Nav>
                                     <Nav className='d-flex gap-2 p-2'>
@@ -55,7 +56,9 @@ const Header = () => {
 
                                           {
                                                 user ? <Button variant="secondary" onClick={handleLogout}>Logout</Button> :
-                                                      <Link to='/login' ><Button variant="secondary" >LogIn</Button></Link>
+                                              <Button className=" btn btn-light "><NavLink to='/login'
+                                              className={`${location.pathname ==='/'?'':''} text-decoration-none text-dark font-weight-bold` }
+                                              >Login</NavLink></Button>  
                                           }
                                     </Nav>
 

@@ -58,18 +58,16 @@ const Home = () => {
       <Container className='mt-5 mb-5'>
         <Row>
           <Col md={6} className="mb-4 mb-md-0">
-            <h1 className="mb-3">Welcome to Section 1</h1>
-            <p className="lead mb-3">
-              This is the first section of your home page.
-            </p>
+            <h1 className="mb-3">Welcome to Ice-cream Corner</h1>
+            
             <p>
-              <Button variant="primary">Order Now details</Button>
+              <Button variant="primary">Order Ice-cream</Button>
             </p>
           </Col>
           <Col md={6}>
          <div  className='mb-5'>
          <LazyLoad height={300}  threshold={0.95}>
-            <img className='w-50' src="https://4.imimg.com/data4/NE/GE/MY-3775197/03.jpg" alt="placeholder" />
+            <img style={{width:'75%'}} src="https://taizyfoodmachinery.com/wp-content/uploads/2019/11/hard-ice-cream-applications.jpg" alt="placeholder" />
             </LazyLoad>
          </div>
 
@@ -81,17 +79,15 @@ const Home = () => {
       <Container className='mt-5 mb-5'>
         <Row>
           <Col md={6} className="mb-4 mb-md-0">
-            <h1>Welcome to Section 2</h1>
+            <h1>Welcome to Fruit Drinks</h1>
+            
             <p>
-              This is the second section of your home page.
-            </p>
-            <p>
-              <Button variant="primary">Fruit Corner details</Button>
+              <Button variant="primary">Order Now Juice</Button>
             </p>
           </Col>
           <Col Col md={6} >
           <LazyLoad height={300}  threshold={0.95}>
-            <img className='w-50' src="https://images.creativemarket.com/0.1.0/ps/4681414/1820/1820/m1/fpnw/wm1/kjolemayepq5soly1f88bubaqisqkjmzjzhmvchwsxdrz2zgkmudfcsedrv5sidl-.jpg?1530298613&s=3f7688a1db6f8b520af94b3852787d27" alt="placeholder" />
+            <img style={{width:'75%'}}src="https://5210.psu.edu/wp-content/uploads/2017/08/iStock-453010753.jpg" alt="placeholder" />
            
            </LazyLoad>
           </Col>

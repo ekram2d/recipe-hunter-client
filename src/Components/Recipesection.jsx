@@ -38,7 +38,7 @@ const Recipesection = ({ recipe }) => {
                                    
 
 
-                                    {set && <Button onClick={handlebtn}>Favourite</Button>}
+                                {  set?   <Button  onClick={handlebtn}>Favourite</Button>: <Button className='disabled'  onClick={handlebtn}>Favourite</Button>}
 
                               </div>
                               <ToastContainer/>
